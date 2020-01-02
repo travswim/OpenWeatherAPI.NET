@@ -4,23 +4,28 @@ using System.Collections.Generic;
 using System.Net;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-namespace OpenWeatherAPI.NET
+namespace OpenWeather.NET
 {
     class Program
     {
         static void Main(string[] args)
         {
             string CODE = "16203ed9d9f4e7286a07ff4aef754f77";
-            string CityName = "West Vancouver";
+            string CityName = "Vancouver";
+            int CityCode = 6173331;
             string CountryCode = "CA";
-            //Console.WriteLine(string.Format(CurrentWeather.WEA, CityName.Replace(" ", "%20"), CountryCode, CODE));
-            string jsonString = GetJSON(string.Format(CurrentWeather.WEA, CityName.Replace(" ", "%20"), CountryCode, CODE));
+
+            double lon = -123.119339;
+            double lat = 49.24966;
+            
+            string jsonString = GetJSON(string.Format(CurrentWeather.LOC_NAME, CityName.Replace(" ", "%20"), CountryCode, CODE));
             CurrentWeather currentWeather = JsonSerializer.Deserialize<CurrentWeather>(jsonString);
-            Console.WriteLine(currentWeather.Main["temp"]);
-            Console.WriteLine(currentWeather.DT);
-            Console.WriteLine(currentWeather.TimeZone);
-            Console.WriteLine(currentWeather.Sys.sunrise);
-            Console.WriteLine(currentWeather.Sys.sunset);
+
+            Console.WriteLine(currentWeather.Weather[0]["id"]);
+           
+
+            //Weather weather = new Weather(CODE, CityName, CountryCode);
+            //Console.WriteLine(weather.DateTimeNow());
 
         }
 

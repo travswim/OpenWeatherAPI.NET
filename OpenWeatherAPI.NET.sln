@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenWeatherTest", "OpenWeatherAPI.NET\OpenWeatherTest.csproj", "{DF127832-3489-4061-9D45-522C6A4B89C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenWeatherTest", "OpenWeatherAPI.NET\OpenWeatherTest.csproj", "{DF127832-3489-4061-9D45-522C6A4B89C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenWeatherAPI.NET", "OpenWeather\OpenWeatherAPI.NET.csproj", "{E32A3720-2136-47F0-B2D7-44AB5C839F89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenWeatherAPI.NET", "OpenWeather\OpenWeatherAPI.NET.csproj", "{E32A3720-2136-47F0-B2D7-44AB5C839F89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitWeatherTest", "XUnitWeatherTest\XUnitWeatherTest.csproj", "{2531CB97-6A99-430E-AA75-BF833A880A74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{E32A3720-2136-47F0-B2D7-44AB5C839F89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E32A3720-2136-47F0-B2D7-44AB5C839F89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E32A3720-2136-47F0-B2D7-44AB5C839F89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2531CB97-6A99-430E-AA75-BF833A880A74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2531CB97-6A99-430E-AA75-BF833A880A74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2531CB97-6A99-430E-AA75-BF833A880A74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2531CB97-6A99-430E-AA75-BF833A880A74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

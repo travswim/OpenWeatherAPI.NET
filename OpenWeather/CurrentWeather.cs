@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Text.Json;
+﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
 // TODO: Retrieve weather as is
 // TODO: Retrieve weather in different units
@@ -11,9 +8,13 @@ namespace OpenWeather
 {
     public class CurrentWeather
     {
-        public static string WEA = "https://api.openweathermap.org/data/2.5/weather?q={0},{1}&appid={2}";
-        //[JsonPropertyName("weather")]
-        //public IList<Dictionary<string, string>> Weather { get; set; }
+        // Different API calls
+        public static string LOC_NAME = "https://api.openweathermap.org/data/2.5/weather?q={0},{1}&appid={2}";
+        public static string LOC_CODE = "https://api.openweathermap.org/data/2.5/weather?id={0}&appid={1}";
+        public static string LOC_GPS = "https://api.openweathermap.org/data/2.5/weather?lat={0}&lon={1}&appid={2}";
+        // TODO: Test weather
+        [JsonPropertyName("weather")]
+        public IList<Wea> Weather { get; set; }
         [JsonPropertyName("base")]
         public string Base { get; set; }
         [JsonPropertyName("main")]
@@ -41,6 +42,13 @@ namespace OpenWeather
         [JsonPropertyName("cod")]
         public int Code { get; set; }
 
+        public class Wea
+        {
+            public int id { get; set; }
+            public string main { get; set; }
+            public string description { get; set; }
+            public string icon { get; set; }
+        }
         public class WeatherSystem
         {
             public int type { get; set; }
@@ -50,6 +58,8 @@ namespace OpenWeather
             public int sunrise { get; set; }
             public int sunset { get; set; }
         }
+
+        
 
 
 
