@@ -1,6 +1,7 @@
 ﻿using OpenWeather;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Net;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -20,12 +21,16 @@ namespace OpenWeather.NET
             
             string jsonString = GetJSON(string.Format(CurrentWeather.LOC_NAME, CityName.Replace(" ", "%20"), CountryCode, CODE));
             CurrentWeather currentWeather = JsonSerializer.Deserialize<CurrentWeather>(jsonString);
-
-            Console.WriteLine(currentWeather.Weather[0]["id"]);
-           
-
-            //Weather weather = new Weather(CODE, CityName, CountryCode);
-            //Console.WriteLine(weather.DateTimeNow());
+            //Console.WriteLine(jsonString);
+            
+            //Console.WriteLine(currentWeather.Weathers[0].main);
+            //CultureInfo ci = CultureInfo.InstalledUICulture;
+            //Console.WriteLine("* 2-letter ISO Name: {0}", ci.TwoLetterISOLanguageName);
+            OpenWeather weather = new OpenWeather(CODE, CityName, CountryCode);
+            Console.WriteLine(weather.DateTimeNow());
+            Console.WriteLine(weather.DateTimeNow_RAW());
+            Console.WriteLine(weather.Sunset());
+            
 
         }
 

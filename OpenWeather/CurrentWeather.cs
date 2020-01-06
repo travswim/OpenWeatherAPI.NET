@@ -14,7 +14,7 @@ namespace OpenWeather
         public static string LOC_GPS = "https://api.openweathermap.org/data/2.5/weather?lat={0}&lon={1}&appid={2}";
         // TODO: Test weather
         [JsonPropertyName("weather")]
-        public IList<Wea> Weather { get; set; }
+        public IList<Weather> Weathers { get; set; }
         [JsonPropertyName("base")]
         public string Base { get; set; }
         [JsonPropertyName("main")]
@@ -23,11 +23,8 @@ namespace OpenWeather
         public Dictionary<string, double> Wind { get; set; }
         [JsonPropertyName("clouds")]
         public Dictionary<string, int> Clouds { get; set; }
-
-        
         [JsonPropertyName("dt")]
         public int DT { get; set; }
-            
         [JsonPropertyName("sys")]
         public WeatherSystem Sys { get; set; }
 
@@ -42,7 +39,7 @@ namespace OpenWeather
         [JsonPropertyName("cod")]
         public int Code { get; set; }
 
-        public class Wea
+        public class Weather
         {
             public int id { get; set; }
             public string main { get; set; }
